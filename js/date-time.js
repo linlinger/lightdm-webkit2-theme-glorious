@@ -33,13 +33,48 @@ class DateTime {
 			'周五',
 			'周六'
 		];
+		//Define a set of array to display day of the month in Chinese.This can be optimized.By spliting numbers and output in a faster way.
+		//Do NOT CODE LIKE THIS. IT'S A PIECE OF SH$T
+		this._daysOfMonthsArr = [
+			'一',
+			'二',
+			'三',
+			'四',
+			'五',
+			'六',
+			'七',
+			'八',
+			'九',
+			'十',
+			'十一',
+			'十二',
+			'十三',
+			'十四',
+			'十五',
+			'十六',
+			'十七',
+			'十八',
+			'十九',
+			'二十',
+			'二十一',
+			'二十二',
+			'二十三',
+			'二十四',
+			'二十五',
+			'二十六',
+			'二十七',
+			'二十八',
+			'二十九',
+			'三十',
+			'三十一',
+		];
 
 		this._init();
 	}
 
-	
-	_getDayOrdinal(day) {
-		return day + (day > 0 ? ['th', 'st', 'nd', 'rd'][(day > 3 && day < 21) ||
+	//Commenting it out due to Difference locale between China and Western
+ 		_getDayOrdinal(day) {
+		return day + (day > 0 ? [''][(day > 3 && day < 21) ||
 			day % 10 > 3 ? 0 : day % 10] : '');
 	}
 
@@ -78,14 +113,17 @@ class DateTime {
 			// 12-hour mode
 			midDay = (hour >= 12) ? '下午' : '上午';
 			hour = (hour === 0) ? 12 : ((hour > 12) ? this._appendZero(hour - 12) : this._appendZero(hour));
-			this._sidebarClock.innerText = `${hour}:${min} ${midDay}`;
-			this._greeterClock.innerText = `${hour}:${min} ${midDay}`;
+			this._sidebarClock.innerText = `${midDay}${hour}:${min}`;
+			this._greeterClock.innerText = ` ${midDay}${hour}:${min}`;
 		}
 		this._sidebarDate.innerText = `${this._daysArr[date.getDay()]}, ${this._monthsArr[date.getMonth()]} ` +
 			`${this._appendZero(date.getDate())}, ${date.getFullYear()}`;
-		this._greeterDate.innerText = `${this._getDayOrdinal(this._appendZero(date.getDate()))} of ` +
-			`${this._monthsArr[date.getMonth()]}, ${this._daysArr[date.getDay()]}`;
-		this._greeterMessage.innerText = `Good ${greeterSuffix}!`;
+		//original
+			//this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._getDayOrdinal(this._appendZero(date.getDate()))} 号 ` +
+		//	`, ${this._daysArr[date.getDay()]}`;
+		this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()))]}日 ` +
+			`, ${this._daysArr[date.getDay()]}`;
+		this._greeterMessage.innerText = `${greeterSuffix}好!`;
 	}
 
 	_startClock() {
