@@ -21,32 +21,32 @@ class Power {
 	_createPowerObject() {
 		this._powerObject = [
 			{
-				'name': 'Shutdown',
+				'name': '关机',
 				'icon': 'shutdown',
 				'enabled': lightdm.can_shutdown,
 				'powerCommand': lightdm.shutdown,
-				'message': 'Shutting down...'
+				'message': '正在关机...'
 			},
 			{
-				'name': 'Reboot',
+				'name': '重新启动',
 				'icon': 'restart',
 				'enabled': lightdm.can_restart,
 				'powerCommand': lightdm.restart,
-				'message': 'Rebooting...'
+				'message': '正在重新启动...'
 			},
 			{
-				'name': 'Hibernate',
+				'name': '休眠',
 				'icon': 'hibernate',
 				'enabled': lightdm.can_hibernate,
 				'powerCommand': lightdm.hibernate,
-				'message': 'Hibernating...'
+				'message': '正在休眠...'
 			},
 			{
-				'name': 'Suspend',
+				'name': '睡眠',
 				'icon': 'suspend',
 				'enabled': lightdm.can_suspend,
 				'powerCommand': lightdm.suspend,
-				'message': 'Suspending...'
+				'message': '正在进入睡眠模式...'
 			}
 		];
 	}
