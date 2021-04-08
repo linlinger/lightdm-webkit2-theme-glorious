@@ -10,33 +10,34 @@ class DateTime {
 		this._twentyFourMode = false;
 		this._clockUpdater = null;
 		this._monthsArr = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December'
+			'一月',
+			'二月',
+			'三月',
+			'四月',
+			'五月',
+			'六月',
+			'七月',
+			'八月',
+			'九月',
+			'十月',
+			'十一月',
+			'十二月'
 		];
 
 		this._daysArr = [
-			'Sunday',
-			'Monday',
-			'Tuesday',
-			'Wednesday',
-			'Thursday',
-			'Friday',
-			'Saturday'
+			'周日',
+			'周一',
+			'周二',
+			'周三',
+			'周四',
+			'周五',
+			'周六'
 		];
 
 		this._init();
 	}
 
+	
 	_getDayOrdinal(day) {
 		return day + (day > 0 ? ['th', 'st', 'nd', 'rd'][(day > 3 && day < 21) ||
 			day % 10 > 3 ? 0 : day % 10] : '');
@@ -61,11 +62,11 @@ class DateTime {
 		min = this._appendZero(min);
 
 		if (hour >= 6 && hour < 12) {
-			greeterSuffix = 'Morning';
+			greeterSuffix = '上午';
 		} else if (hour >= 12 && hour < 18) {
-			greeterSuffix = 'Afternoon';
+			greeterSuffix = '下午';
 		} else {
-			greeterSuffix = 'Evening';
+			greeterSuffix = '晚上';
 		}
 
 		// 24-hour mode
@@ -75,7 +76,7 @@ class DateTime {
 			this._greeterClock.innerText = `${hour}:${min}`;
 		} else {
 			// 12-hour mode
-			midDay = (hour >= 12) ? 'PM' : 'AM';
+			midDay = (hour >= 12) ? '下午' : '上午';
 			hour = (hour === 0) ? 12 : ((hour > 12) ? this._appendZero(hour - 12) : this._appendZero(hour));
 			this._sidebarClock.innerText = `${hour}:${min} ${midDay}`;
 			this._greeterClock.innerText = `${hour}:${min} ${midDay}`;
