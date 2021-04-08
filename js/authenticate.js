@@ -11,32 +11,20 @@ class Authenticate {
 
 	_returnRandomErrorMessages() {
 		const errorMessages = [
-			'Authentication failed!',
-			'You look stoopid.',
-			'This incident will be reported.',
-			'Why are you the way that you are?',
-			'This will self-destruct in 5 seconds!',
-			'Uhhh... are you sure you know what you are doing?',
-			'“You miss 100% of the shots you don\'t take – Wayne Gretzky – Michael Scott”',
-			'Get out of there, it\'s gonna blow!',
-			'I can do this all day.',
-			'You father is right. You are a disappointment...',
-			'PAM will lock you out...'
+			'登陆失败，请重试',
+			'密码输入错误'
 		];
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];	
 	}
 
 	_returnRandomSuccessfulMessages() {
 		const errorMessages = [
-			'Authentication success! Logging in!',
-			'Logging in! Biatch',
-			'Don\'t watch too much porn, bro.',
-			'Splish! Splash! Your password is trash!',
-			'Looking good today~',
-			'What are you doing, stepbro?~',
-			'You are someone\'s reason to smile.',
-			'Finally, someone with a good amount of IQ!',
-			'Please, don\'t watch porn.'
+			'登陆成功！',
+			'正在进入桌面',
+			'欢迎使用SpanningTree Linux',
+			'今天又是美好的一天。加油！',
+			'长风破浪会有时，直挂云帆济沧海',
+			'啾咪～'
 		];
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];
 	}
