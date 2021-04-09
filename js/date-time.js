@@ -116,13 +116,13 @@ class DateTime {
 			this._sidebarClock.innerText = `${midDay}${hour}:${min}`;
 			this._greeterClock.innerText = ` ${midDay}${hour}:${min}`;
 		}
-		this._sidebarDate.innerText = `${this._daysArr[date.getDay()]}, ${this._monthsArr[date.getMonth()]} ` +
-			`${this._appendZero(date.getDate())}, ${date.getFullYear()}`;
+		this._sidebarDate.innerText = `${date.getFullYear()}年${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()-1))]}日`;
 		//original
 			//this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._getDayOrdinal(this._appendZero(date.getDate()))} 号 ` +
 		//	`, ${this._daysArr[date.getDay()]}`;
-		this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()))]}日 ` +
+		this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()-1))]}日 ` +
 			`, ${this._daysArr[date.getDay()]}`;
+			console.log("Current date is "+ date.getDate())
 		this._greeterMessage.innerText = `${greeterSuffix}好!`;
 	}
 
