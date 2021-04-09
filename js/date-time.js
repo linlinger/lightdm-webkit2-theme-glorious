@@ -122,7 +122,8 @@ class DateTime {
 		//	`, ${this._daysArr[date.getDay()]}`;
 		this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()-1))]}日 ` +
 			`, ${this._daysArr[date.getDay()]}`;
-			console.log("Current date is "+ date.getDate())
+			//used for display current day of the month. Commented out.
+			//console.log("Current date is "+ date.getDate())
 		this._greeterMessage.innerText = `${greeterSuffix}好!`;
 	}
 
