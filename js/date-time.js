@@ -117,7 +117,8 @@ class DateTime {
             this._sidebarClock.innerText = `${midDay}${hour}:${min}`;
             this._greeterClock.innerText = ` ${midDay}${hour}:${min}`;
         }
-        console.log(date.getDate());
+        //for debugging purposes
+        //console.log(date.getDate());
         this._sidebarDate.innerText = `${date.getFullYear()}年${this._monthsArr[date.getMonth()]}${this._daysOfMonthsArr[(this._getDayOrdinal(date.getDate()-1))]}日`;
         //original
         //this._greeterDate.innerText = `${this._monthsArr[date.getMonth()]}${this._getDayOrdinal(this._appendZero(date.getDate()))} 号 ` +
