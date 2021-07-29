@@ -96,13 +96,14 @@ class DateTime {
         let midDay = null;
         let greeterSuffix = null;
         min = this._appendZero(min);
-
-        if (hour >= 6 && hour < 12) {
+        
+        if (hour >= 0 && hour < 12) {
             greeterSuffix = '上午';
         } else if (hour >= 12 && hour < 18) {
             greeterSuffix = '下午';
-        } else {
+        } else if (hour >=18 && hour <=23) { 
             greeterSuffix = '晚上';
+        }
         }
 
         // 24-hour mode
