@@ -104,7 +104,7 @@ class DateTime {
         } else if (hour >=18 && hour <=23) { 
             greeterSuffix = '晚上';
         }
-        }
+        
 
         // 24-hour mode
         if (this._twentyFourMode === true) {
